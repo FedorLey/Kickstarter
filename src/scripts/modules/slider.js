@@ -21,8 +21,19 @@ export const initSlider = () => {
   }
 
   const scrollToSlide = (direction) => {
-    track.scrollBy({
-      left: track.clientWidth * direction,
+    const currentIndex = Math.round(track.scrollLeft / track.clientWidth);
+    let targetIndex = currentIndex + direction;
+
+    if (targetIndex < 0) {
+      targetIndex = 0;
+    }
+
+    if (targetIndex >= slides.length) {
+      targetIndex = slides.length - 1;
+    }
+
+    track.scrollTo({
+      left: track.clientWidth * targetIndex,
       behavior: 'smooth',
     });
   };
@@ -33,7 +44,9 @@ export const initSlider = () => {
   track.addEventListener(
     'scroll',
     () => {
-      const index = Math.round(track.scrollLeft / track.clientWidth);
+      let index = Math.round(track.scrollLeft / track.clientWidth);
+
+      index = Math.max(0, Math.min(index, slides.length - 1));
 
       if (currentEl) {
         currentEl.textContent = String(index + 1).padStart(2, '0');
