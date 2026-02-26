@@ -88,9 +88,33 @@
         <nav class="navigation menu__navigation">
           <ul class="navigation__items">
             <li class="navigation__item"><span class="navigation__link navigation__link--active">Our story</span></li>
-            <li class="navigation__item"><a href="#about" class="navigation__link">About us</a></li>
-            <li class="navigation__item"><a href="#features" class="navigation__link">Features</a></li>
-            <li class="navigation__item"><a href="#questions" class="navigation__link">Get in touch</a></li>
+            <li class="navigation__item">
+              <a
+                href="#about"
+                class="navigation__link"
+                onclick="document.getElementById('menu').classList.remove('menu--open'); document.body.classList.remove('page__body--no-scroll');"
+              >
+                About us
+              </a>
+            </li>
+            <li class="navigation__item">
+              <a
+                href="#features"
+                class="navigation__link"
+                onclick="document.getElementById('menu').classList.remove('menu--open'); document.body.classList.remove('page__body--no-scroll');"
+              >
+                Features
+              </a>
+            </li>
+            <li class="navigation__item">
+              <a
+                href="#questions"
+                class="navigation__link"
+                onclick="document.getElementById('menu').classList.remove('menu--open'); document.body.classList.remove('page__body--no-scroll');"
+              >
+                Get in touch
+              </a>
+            </li>
           </ul>
         </nav>
 

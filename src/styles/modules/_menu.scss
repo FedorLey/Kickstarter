@@ -45,7 +45,7 @@
 
   &__button {
     width: 100%;
-    margin-top: auto;
+    margin-block: auto 30px;
 
     @include tablet {
       display: none;
